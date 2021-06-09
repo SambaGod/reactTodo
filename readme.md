@@ -1,0 +1,1 @@
+This is an advanced ReactJS todo app designed to practice some state of the art tools that would help the app run smoother, faster and with little to none expensive code
