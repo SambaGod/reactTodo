@@ -7,7 +7,7 @@ Addons used in this project:
 - Styled components
 
 `npm install react react-dom`
-`npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/preset-react webpack webpack-cli webpack-dev-server style-loader css-loader babel-loader`
+`npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/preset-react webpack webpack-cli webpack-dev-server style-loader css-loader babel-loader react-hot-loader`
 
 Serve from webpack:
 `npx webpack-dev-server --mode development`
