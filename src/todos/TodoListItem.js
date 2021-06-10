@@ -6,11 +6,14 @@ const CreatedAtContainer = styled.div`
   color: gray;
 `;
 
+export const getBorderStyleForDate = (startingDate, currentDate) =>
+  startingDate > new Date(currentDate - 86400000 * 5)
+    ? 'none'
+    : '2px solid red';
+
 const CreatedAtContainerWithLogic = styled(CreatedAtContainer)`
   border-bottom: ${props =>
-    new Date(props.createdAt) > new Date(Date.now() - 864000 * 5)
-      ? 'none'
-      : '2px solid red'};
+    getBorderStyleForDate(Date.now(), new Date(props.createdAt))};
 `;
 
 const TodoListItem = ({ todo, onRemovePressed, onCompletedPressed }) => {
