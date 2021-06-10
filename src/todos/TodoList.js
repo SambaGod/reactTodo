@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 import NewTodoForm from './NewTodoForm';
 import TodoListItem from './TodoListItem';
 import {
@@ -13,9 +14,14 @@ import {
   markTodoAsCompletedRequest,
 } from './thunks';
 
+const BigRedTitle = styled.div`
+  font-size: 5em;
+  color: red;
+`;
+
 const TodoList = ({
-  getCompletedTodos,
-  getIncompleteTodos,
+  completedTodos,
+  inCompleteTodos,
   onRemovePressed,
   onCompletedPressed,
   isLoading,
@@ -27,6 +33,7 @@ const TodoList = ({
   const loadingMessage = <div>Loading Todos ...</div>;
   const content = (
     <div className='container'>
+      <BigRedTitle>This is a Todo List!</BigRedTitle>
       <NewTodoForm />
       <h3>Incomplete Todos:</h3>
       {inCompleteTodos.map(todo => (
@@ -37,7 +44,7 @@ const TodoList = ({
         />
       ))}
       <h3>Completed Todos:</h3>
-      {completeTodos.map(todo => (
+      {completedTodos.map(todo => (
         <TodoListItem
           todo={todo}
           onRemovePressed={onRemovePressed}

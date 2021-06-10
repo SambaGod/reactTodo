@@ -7,9 +7,9 @@ import {
   LOAD_TODOS_SUCCESS,
 } from './actions';
 
-const initialState = { isLoading: false, date: [] };
+const initialState = { isLoading: false, data: [] };
 
-export const todos = (state = [], action) => {
+export const todos = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
     case CREATE_TODO: {
